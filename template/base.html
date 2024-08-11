@@ -1,6 +1,4 @@
 {% load static %}
-
-{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -76,10 +74,12 @@
               <div class="quote_btn-container">
                 <form class="form-inline">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <a href="{% url 'contact-page' %}">
                     <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
                   </button>
                 </form>
-                <a href="">
+                <a href="{% url 'index-page' %}">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
               </div>
