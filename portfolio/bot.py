@@ -13,6 +13,6 @@ def  send_message(text):
   TEXT = text
   url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendphoto?chat_id={CHAT_ID}&photo={PHOTO}&caption={TEXT}"
   response = requests.get(url)
-#   print(f"Sending message: {text}")
+
 
 
