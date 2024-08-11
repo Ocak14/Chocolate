@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Contact, About
+from .models import Contact
 from django.views.generic.edit import FormView
 from .forms import ContactForm
 from .bot import send_message
@@ -14,9 +14,10 @@ class ContactFormView(FormView):
 
     def form_valid(self, form):
       full_name = form.cleaned_data.get('full_name')
+      phone_number = form.cleaned_data.get('phone_number')
       email = form.cleaned_data.get('email')
       content = form.cleaned_data.get('content')
-      text = f"Name: {full_name}\nEmail: {email}\ntext: {content}"
+      text = f"Name: {full_name}\nEmail: {email}\nPhone_number: {phone_number}\ntext: {content}"
       send_message(text)
       Contact.objects.create(
         full_name=full_name,
@@ -30,14 +31,17 @@ class ContactFormView(FormView):
 def home_view(request):
  return render(request=request,template_name='index.html')
 
-class AboutListView(ListView):
-  model = About
-  template_name = 'about.html'
-  context_object_name = 'about'
+# class AboutListView(ListView):
+#   model = About
+#   template_name = 'about.html'
+#   context_object_name = 'about'
 
 def chocolate_view(request):
  return render(request=request,template_name='chocolate.html')
 
+
+def about_view(request):
+ return render(request=request,template_name='about.html')
 
 
 def testimonial_view(request):
