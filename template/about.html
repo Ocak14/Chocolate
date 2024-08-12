@@ -17,16 +17,14 @@
               </div>
               <p>{{ about.description }}</p>
               <a href="#">
-                <span>
-                  Read More
-                </span>
-                <img src="{% static 'images/color-arrow.png' %}" alt="">
+               
               </a>
+              
             </div>
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="{% static 'images/about-img.png' %}" alt="">
+              <img src="{{ about.image.url }}" alt="">
             </div>
           </div>
         </div>

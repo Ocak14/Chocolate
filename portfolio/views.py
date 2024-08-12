@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Contact
+from .models import Contact ,Chocolate,About,Testimonial
 from django.views.generic.edit import FormView
 from .forms import ContactForm
 from .bot import send_message
@@ -31,19 +31,19 @@ class ContactFormView(FormView):
 def home_view(request):
  return render(request=request,template_name='index.html')
 
-# class AboutListView(ListView):
-#   model = About
-#   template_name = 'about.html'
-#   context_object_name = 'about'
-
-def chocolate_view(request):
- return render(request=request,template_name='chocolate.html')
+class AboutListView(ListView):
+  model = About
+  template_name = 'about.html'
+  context_object_name = 'about'
 
 
-def about_view(request):
- return render(request=request,template_name='about.html')
 
+class ChocolateListView(ListView):
+  model = Chocolate
+  template_name = 'chocolate.html'
+  context_object_name = 'chocolate'
 
-def testimonial_view(request):
- return render(request=request,template_name='testimonial.html')
-
+class TestimonialListView(ListView):
+  model = Testimonial
+  template_name ='about.html'
+  context_object_name = 'ttestimonial'

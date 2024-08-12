@@ -14,12 +14,29 @@ class Contact(models.Model):
         return f"{self.full_name} {self.email}"
 
 
+class Chocolate(models.Model):
+    image = models.ImageField(upload_to='Images/chocolate')
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.title
+    
+class About(models.Model):
+    image = models.ImageField(upload_to='Images/about')
+    title = models.CharField(max_length=70)
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.title
+    
 
-# class About(models.Model):
-#     title = models.CharField(max_length=100)
-#     description = models.TextField()
-#     image = models.ImageField(upload_to='Images/about')
+
+   
+class Testimonial(models.Model):
+    image = models.ImageField(upload_to='Images/testimonial')
+    title = models.CharField(max_length=70)
+    description = models.TextField()
     
-#     def __str__(self):
-#         return self.title
-    
+    def __str__(self):
+        return self.title
