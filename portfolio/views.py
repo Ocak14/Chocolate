@@ -45,5 +45,5 @@ class ChocolateListView(ListView):
 
 class TestimonialListView(ListView):
   model = Testimonial
-  template_name ='about.html'
-  context_object_name = 'ttestimonial'
+  template_name ='testimonial.html'
+  context_object_name = 'testimonials'

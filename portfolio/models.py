@@ -35,6 +35,7 @@ class About(models.Model):
    
 class Testimonial(models.Model):
     image = models.ImageField(upload_to='Images/testimonial')
+    image = models.ImageField(upload_to='Images/testimonial')
     title = models.CharField(max_length=70)
     description = models.TextField()
     
